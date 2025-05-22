@@ -1,0 +1,43 @@
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.animation-container {
+  perspective: 1000px;
+}
+
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 2s ease-in-out;
+}
+
+.cube-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  border: 2px solid #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* Faces com cores diferentes */
+.front  { background: red;    transform: rotateY(0deg) translateZ(100px); }
+.back   { background: blue;   transform: rotateY(180deg) translateZ(100px); }
+.right  { background: green;  transform: rotateY(90deg) translateZ(100px); }
+.left   { background: yellow; transform: rotateY(-90deg) translateZ(100px); }
+.top    { background: orange; transform: rotateX(90deg) translateZ(100px); }
+.bottom { background: purple; transform: rotateX(-90deg) translateZ(100px); }
